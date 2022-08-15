@@ -1,0 +1,47 @@
+﻿<Window x:Class="Frontend.View.BoardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frontend.View"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+
+        Title="BoardView" Height="450" Width="900" 
+         >
+    <Viewbox >
+
+        <Grid Background="SkyBlue" Height="500" Width="1020" >
+            <Label Content="{Binding BoardName, Mode=OneWay}"  HorizontalAlignment="Left" Margin="480,5,0,0" Width="216" Height="35" FontSize="20" Foreground="Blue" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic"/>
+            <ListBox x:Name="Column1" Margin="124,90,646,55" ItemsSource ="{Binding  Path=BacklogColumn,Mode=TwoWay}"   AllowDrop="False" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Black" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <ListBox x:Name="Column2" ItemsSource ="{Binding Path=InProgressColumn,Mode=TwoWay}" Margin="400,90,370,55" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Black" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <ListBox x:Name="Column3" ItemsSource ="{Binding Path=DoneColumn,Mode=TwoWay}" Margin="685,90,85,55" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Black" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <Label Content="BackLog" HorizontalAlignment="Left" Margin="201,57,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontFamily="Century Gothic"  Background="AntiqueWhite" Foreground="Navy" Width="95" RenderTransformOrigin="-0.487,0.543" />
+            <Label Content="InProgress" HorizontalAlignment="Left" Margin="491,57,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontFamily="Century Gothic" Background="AliceBlue" Foreground="SeaGreen"/>
+            <Label Content="Done" HorizontalAlignment="Left" Margin="751,57,0,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontFamily="Century Gothic" Background ="Thistle" Width="118"/>
+            <Button Content="Logout" Click="Logout_Click" HorizontalAlignment="Left" Margin="935,460,0,0" VerticalAlignment="Top" Height="34" Width="80"   Background="#FFFF3B3B"/>
+            <Button Content="Back" HorizontalAlignment="Left" Height="35" Margin="26,13,0,0" VerticalAlignment="Top" Width="88" Click="Back_Click" RenderTransformOrigin="0.498,-0.102"/>
+        </Grid>
+    </Viewbox>
+</Window>

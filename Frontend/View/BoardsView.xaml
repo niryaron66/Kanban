@@ -1,0 +1,32 @@
+﻿<Window x:Class="Frontend.View.BoardsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frontend.View"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="BoardsView" Height="450" Width="800">
+    <Viewbox>
+        <Grid Background="SkyBlue" Height="500" Width="1020">
+            <Label Content="Welcome,"  Background="DodgerBlue" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="SemiBold" FontSize="16" FontStyle="Italic" Width="78"/>
+            <Label Content="{Binding User, Mode=OneWay}"  HorizontalAlignment="Left" Background="DodgerBlue" Margin="78,0,0,0" VerticalAlignment="Top" FontWeight="SemiBold" FontSize="16" FontStyle="Italic" Height="31" Width="942" RenderTransformOrigin="0.325,0.703"/>
+            <ListBox x:Name="BoardList" HorizontalAlignment="Left"  Height="240"  Margin="87,122,0,0" VerticalAlignment="Top" Width="552" ItemsSource="{Binding Path=Boards}" AllowDrop="False" FontSize="20" Background="WhiteSmoke" BorderBrush="Black" SelectionChanged="BoardList_SelectionChanged">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Black" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+            </ListBox>
+            <Border BorderBrush="Black"
+                BorderThickness="1,1,1,0"
+                CornerRadius="7,7,0,0">
+                <Label Content="My Boards" HorizontalAlignment="Left"  Background="SkyBlue" BorderBrush="Black" HorizontalContentAlignment="Left" FontWeight="Bold" FontStyle="Italic" FontSize="18" Height="48" Margin="87,69,0,0" VerticalAlignment="Top" Width="552"/>
+            </Border>
+            <Button Content="Logout" Click="Logout_Click" HorizontalAlignment="Left" BorderThickness="5" Margin="815,419,0,0" VerticalAlignment="Top" Height="34" Width="103" Background="#FFFF3B3B"/>
+
+        </Grid>
+    </Viewbox>
+</Window>
