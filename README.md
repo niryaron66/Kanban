@@ -1,3 +1,1 @@
-# kanban
-324022284_212743850_209507664
-05
+In this assignment we built a kanban board using n-tier architecture ( Service Layer, Buisness Layer, Data Access Layer ) and the MVVM Design Pattern ( Model, View, ViewModel) with WPF and .net at c#.
